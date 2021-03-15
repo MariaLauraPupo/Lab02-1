@@ -20,7 +20,7 @@ public class AlienDictionary {
 	public void addWord(String alienWord, String translate) {
 		
 		Word parola=new Word(alienWord,translate);
-		parole.put(alienWord,parola);
+		parole.put(alienWord+translate,parola);
 
 	}
 	

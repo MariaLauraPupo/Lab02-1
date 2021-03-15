@@ -37,21 +37,25 @@ public class FXMLController {
     	
     	String [] parola=txtParola.getText().split(" ");
     	if(parola.length==2) {
-    		if(dizionario.getParole().containsKey(parola[0])==false) {
+    		//if(dizionario.getParole().containsKey(parola[0])==false) {
     		dizionario.addWord(parola[0], parola[1]);
-    		}else {
-    			dizionario.getParole().get(parola[0]).setTranslation(parola[1]);
-    		}
+    		//}/*else {
+    			//dizionario.getParole().get(parola[0]).setTranslation(parola[1]);
+    			
+    		//}
     	
     			
     		
     	}
     	if(parola.length==1) {
+    		String elencoParole="";
     		for(Word w:dizionario.getParole().values()) {
     			if(w!=null && w.getAlienWord().equals(parola[0])) {
-    				txtArea.setText(w.getTranslation());
+    				elencoParole=elencoParole +"\n"+ w.getTranslation();
+ 
+    				//txtArea.setText(elencoParole);
     			}
-    		}
+    		}txtArea.setText(elencoParole);
     	}
     	
     	
